@@ -1,12 +1,14 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
+screen = Screen()
 
 
 class Ball(Turtle):
 
-    def __init__(self,):
+    def __init__(self):
         super().__init__()
+        color_choice = screen.textinput("Ball color", "Type color of ball: ").lower()
         self.shape("circle")
-        self.color("yellow")
+        self.color(color_choice)
         self.penup()
         self.y_move = 10
         self.x_move = 10

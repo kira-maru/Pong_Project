@@ -18,8 +18,6 @@ ball = Ball()
 score = Score()
 table = Table()
 
-
-
 screen.listen()
 screen.onkey(paddle_1.move_up, "w")
 screen.onkey(paddle_2.move_up, "Up")
@@ -40,16 +38,19 @@ while game_on:
             or ball.distance(paddle_1) < 60 and ball.xcor() < -320):
         ball.bounce_x()
 
-
     #Detect when paddle misses + score
-
     if ball.xcor() > 380:
         score.scoring_1()
+        if score.player_1_score == 10:
+            score.game_over(score.player_1)
+            game_on = False
         ball.reset_ball()
 
     elif ball.xcor() < -350:
         score.scoring_2()
+        if score.player_2_score == 10:
+            score.game_over(score.player_2)
+            game_on = False
         ball.reset_ball()
-
 
 screen.exitonclick()

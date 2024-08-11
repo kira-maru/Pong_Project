@@ -1,6 +1,6 @@
+from turtle import Turtle
 PLAYER_1_POSITION = (-350, 0)
 PLAYER_2_POSITION = (350, 0)
-from turtle import Turtle
 
 
 class Paddle(Turtle):
